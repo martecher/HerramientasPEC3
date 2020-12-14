@@ -9,25 +9,41 @@
   </head>
   <body>
 <header>
-    <nav class="flex items-center justify-between p-6 container mx-auto">
-        <!-- Logo -->
-            <a href="index.html">
-              <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
-            </a>        
+  <div class="container mx-auto p-6">
+    <nav class="flex-row md:justify-between">
+        <div class="flex flex-row justify-between">
+           <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
 
-        <!-- Menu items -->
-        <div class="text-lg text-gray-600 hidden lg:flex">
-            <a href="bandas.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
-                Bandas
-            </a>
-            <a href="" class="block mt-4 lg:inline-block hover:text-gray-700 lg:mt-0 mr-10">
-                Blog
-            </a>
-            <a href="#" class="block mt-4 lg:inline-block hover:text-gray-700 lg:mt-0 mr-10">
-                Galeria
-            </a>
+           <p id="hamburgerbtn" class="md:hidden">
+                <button
+                    class="flex items-center px-4 py-3 border rounded text-teal-500 border-teal-500 focus:outline-none">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+           </p>
         </div>
+       
+        <ul class="hidden md:flex md:flex-row" id="mobileMenu">
+            <li class="pr-5">
+              <a href="bandas.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Bandas
+              </a>
+            </li>
+            <li class="pr-5">
+              <a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Blog
+              </a>
+            </li>
+            <li class="pr-5">
+              <a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Galería
+              </a>
+            </li>
+        </ul>
     </nav>
+  </div>
 </header>
 
 <div class="w-full lg:flex items-center">
@@ -59,7 +75,21 @@
     <button type="submit" class="py-3 px-12 bg-blue-500 hover:bg-blue-600 mr-5 rounded-md text-white text-lg focus:outline-none w-full">Request Demo</button>
 </form>    </div>
 </div>
+    <style>
+        .active{
+            display: block;
+        }    
+    </style>
 
+    <script>
+        let hamburger = document.getElementById('hamburgerbtn');
+
+        let mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function(){
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
     <script src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
   </body>
 </html>

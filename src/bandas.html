@@ -8,27 +8,43 @@
     <title>UOC Boilerplate</title>
   </head>
   <body>
-    <header>
-        <nav class="flex items-center justify-between p-6 container mx-auto">
-            <!-- Logo -->
-                <a href="index.html">
-                  <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
-                </a>        
+<header>
+  <div class="container mx-auto p-6">
+    <nav class="flex-row md:justify-between">
+        <div class="flex flex-row justify-between">
+           <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
 
-            <!-- Menu items -->
-            <div class="text-lg text-gray-600 hidden lg:flex">
-                <a href="bandas.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
-                    Bandas
-                </a>
-                <a href="" class="block mt-4 lg:inline-block hover:text-gray-700 lg:mt-0 mr-10">
-                    Blog
-                </a>
-                <a href="#" class="block mt-4 lg:inline-block hover:text-gray-700 lg:mt-0 mr-10">
-                    Galeria
-                </a>
-            </div>
-        </nav>
-    </header>
+           <p id="hamburgerbtn" class="md:hidden">
+                <button
+                    class="flex items-center px-4 py-3 border rounded text-teal-500 border-teal-500 focus:outline-none">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+           </p>
+        </div>
+       
+        <ul class="hidden md:flex md:flex-row" id="mobileMenu">
+            <li class="pr-5">
+              <a href="bandas.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Bandas
+              </a>
+            </li>
+            <li class="pr-5">
+              <a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Blog
+              </a>
+            </li>
+            <li class="pr-5">
+              <a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Galería
+              </a>
+            </li>
+        </ul>
+    </nav>
+  </div>
+</header>
     <div class="w-full xl:flex lg:flex items-center">
         <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full">
             <div class="w-full">
@@ -81,11 +97,11 @@
         <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full">   
             <div class="w-full">
                 <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
-                  <img class="w-full" src="assets/images/rock-band-silhouettes-on-stage-at-concert.jpg" alt="Izal">
+                  <img class="w-full" src="assets/images/people-in-festival-750.jpg" alt="Antilopez">
                   <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Izal</div>
+                    <div class="font-bold text-xl mb-2">Antilopez</div>
                     <p class="text-grey-darker text-base">
-                        Rock actual que destaca por la voz de su cantante principal.
+                        Mezcla de estilos que sorpenderán a los asistentes.
                     </p>
                   </div>
                   <div class="px-6 py-4">
@@ -99,11 +115,11 @@
         <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full">
             <div class="w-full">
                 <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
-                  <img class="w-full" src="assets/images/the-musician-plays-an-acoustic-guitar.jpg" alt="Rozzalen">
+                  <img class="w-full" src="assets/images/music-band-in-the-studio-with-many-instruments.jpg" alt="Queen">
                   <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Rozzalen</div>
+                    <div class="font-bold text-xl mb-2">Queen</div>
                     <p class="text-grey-darker text-base">
-                      Una de las mayores exponentes actuales en el mercado nacional.
+                      Tributo a la mítica banda tocando todos sus grandes éxistos.
                     </p>
                   </div>
                   <div class="px-6 py-4">
@@ -115,11 +131,11 @@
         <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full">   
             <div class="w-full">
                 <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
-                  <img class="w-full" src="assets/images/the-drummer-plays-the-drums.jpg" alt="El Kanka">
+                  <img class="w-full" src="assets/images/band-in-the-studio-with-many-instruments.jpg" alt="Andres Calamaro">
                   <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">El Kanka</div>
+                    <div class="font-bold text-xl mb-2">Andres Calamaro</div>
                     <p class="text-grey-darker text-base">
-                      Con su estilo fresco no te dejará indiferente.
+                     Artista internacional que trae a nuestra tierra todos sus grandes éxitos.
                     </p>
                   </div>
                   <div class="px-6 py-4">
@@ -161,7 +177,21 @@
             </div>  
         </div> 
     </div>
+    <style>
+        .active{
+            display: block;
+        }    
+    </style>
 
+    <script>
+        let hamburger = document.getElementById('hamburgerbtn');
+
+        let mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function(){
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
     <script src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
   </body>
 </html>
