@@ -12,8 +12,9 @@
   <div class="container mx-auto p-6">
     <nav class="flex-row md:justify-between">
         <div class="flex flex-row justify-between">
-           <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
-
+            <a href="index.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
+            </a>
            <p id="hamburgerbtn" class="md:hidden">
                 <button
                     class="flex items-center px-4 py-3 border rounded text-teal-500 border-teal-500 focus:outline-none">
@@ -177,6 +178,65 @@
             </div>  
         </div> 
     </div>
+
+      <div class="item-3">
+        <section class="w-full xl:flex lg:flex items-center">
+          <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full4">
+            <a href="#">INFORMACIÓN Y RESERVAS</a>
+          </div>
+          <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full4">
+           <a href="#">555 555 555 | reservas@festivalchiclana.es</a>
+          </div>
+          <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full4">
+            <a href="#">AVISO LEGAL</a>
+          </div>
+          <div class="xl:w-4/12 lg:w-4/12 lg:m-4 md:w-full md:m-4 sm:w-full4">
+            <a href="#">Política de privacidad</a>
+             | <a href="#">Política de cookies</a>
+          </div>
+        </section>
+      </div>   
+
+
+<footer>
+  <div class="container mx-auto p-6">
+    <nav class="flex-row md:justify-between">
+        <div class="flex flex-row justify-between">
+            <a href="index.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                <img class ="logo" src="assets/images/logoFest.png" alt="Logo festival">
+            </a>
+           <p id="hamburgerbtnFooter" class="md:hidden">
+                <button
+                    class="flex items-center px-4 py-3 border rounded text-teal-500 border-teal-500 focus:outline-none">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+           </p>
+        </div>
+       
+        <ul class="hidden md:flex md:flex-row" id="mobileMenuFooter">
+            <li class="pr-5">
+              <a href="bandas.html" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Bandas
+              </a>
+            </li>
+            <li class="pr-5">
+              <a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Blog
+              </a>
+            </li>
+            <li class="pr-5">
+              <a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+                Galería
+              </a>
+            </li>
+        </ul>
+    </nav>
+  </div>
+</footer>
+
     <style>
         .active{
             display: block;
@@ -190,6 +250,14 @@
 
         hamburger.addEventListener('click', function(){
             mobileMenu.classList.toggle('active');
+        });
+
+        let hamburgerFooter = document.getElementById('hamburgerbtnFooter');
+
+        let mobileMenuFooter = document.getElementById('mobileMenuFooter');
+
+        hamburgerFooter.addEventListener('click', function(){
+            mobileMenuFooter.classList.toggle('active');
         });
     </script>
     <script src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
